@@ -34,7 +34,7 @@ This application was developed as a **JavaScript Assignment** to demonstrate pro
 
 1. **Clone repository**
    ```bash
-   git clone 
+   git clone https://github.com/zohersahli/Budget-Planner.git
 
    cd budget-planner
    ```
