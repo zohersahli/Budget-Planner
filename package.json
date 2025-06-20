@@ -1,0 +1,19 @@
+{
+  "name": "budget-planner",
+  "version": "1.0.0",
+  "description": "A simple and dynamic JavaScript application that helps you plan your monthly budget, track expenses, and calculate savings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "happy-dom": "^18.0.1",
+    "vitest": "^3.2.4"
+  },
+  "vitest": {
+    "environment": "happy-dom"
+  }
+}

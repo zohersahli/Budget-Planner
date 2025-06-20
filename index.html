@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Planner</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <h1>Budget Planner</h1>
+
+  <div id="message-container"></div>
+
+  <div class="container">
+    <section id="income-section">
+      <h2>Monthly Income</h2>
+      <input type="number" id="income-input" placeholder="Enter your income" />
+      <input type="date" id="income-date" />
+      <button id="set-income-btn">Set Income</button>
+      <p id="income-display">Income: 0 SEK</p>
+      
+      <div class="action-buttons">
+        <button id="go-to-today-btn" class="secondary-btn">📅 Go to Today</button>
+      </div>
+    </section>
+
+    <section id="expense-section">
+      <h2>Add Expense</h2>
+      <input type="text" id="expense-name" placeholder="Expense name" />
+      <input type="number" id="expense-amount" placeholder="Amount" />
+      <select id="expense-category">
+        <option value="" disabled selected>Select category</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Bills">Bills</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" id="new-category-input" placeholder="Add new category" />
+      <button id="add-category-btn">Add Category</button>
+      <input type="date" id="expense-date" />
+      <button id="add-expense-btn">Add Expense</button>
+    </section>
+
+    <section id="expense-list-section">
+      <h2>Expenses</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="expense-name">Name</th>
+              <th class="expense-amount">Amount</th>
+              <th class="expense-category">Category</th>
+              <th class="expense-date">Date</th>
+              <th class="expense-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="expense-table-body">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="summary-section">
+      <h2>Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card neutral">
+          <div class="title">Total Expenses</div>
+          <div class="value" id="total-expenses">0</div>
+          <div class="label">SEK</div>
+        </div>
+        
+        <div class="summary-card" id="remaining-card">
+          <div class="title">Remaining Balance</div>
+          <div class="value" id="remaining-balance">0</div>
+          <div class="label">SEK</div>
+        </div>
+        
+        <div class="summary-card" id="saved-card">
+          <div class="title">Saved</div>
+          <div class="percentage" id="saved-percentage">0%</div>
+          <div class="label">of total income</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis-section">
+      <h2>Monthly & Yearly Analysis</h2>
+      
+      <div class="filters-container">
+        <div class="filter-group">
+          <label for="filter-year">Year:</label>
+          <select id="filter-year">
+            <option value="all">All Years</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-month">Month:</label>
+          <select id="filter-month">
+            <option value="all">All Months</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-category">Category:</label>
+          <select id="filter-category">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="monthly-totals">
+      </div>
+      <div class="total-card">
+        <h3>Filtered Results</h3>
+        <div class="amount" id="yearly-total-expenses">0 SEK</div>
+        <div class="label">Total Expenses for Selected Filters</div>
+      </div>
+    </section>
+
+    <section id="income-analysis-section">
+      <h2>Income Analysis</h2>
+      
+      <div class="filters-container">
+        <div class="filter-group">
+          <label for="income-filter-year">Year:</label>
+          <select id="income-filter-year">
+            <option value="all">All Years</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="income-filter-month">Month:</label>
+          <select id="income-filter-month">
+            <option value="all">All Months</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="income-totals">
+      </div>
+      <div class="total-card">
+        <h3>Income Summary</h3>
+        <div class="amount" id="yearly-total-income">0 SEK</div>
+        <div class="label">Total Income for Selected Filters</div>
+      </div>
+    </section>
+
+    <section id="clear-data-section">
+      <div class="clear-data-container">
+        <p>This action will permanently delete all your income and expense data.</p>
+        <button id="clear-all-btn" class="danger-btn">Clear All Data</button>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
